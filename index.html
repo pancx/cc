@@ -5,7 +5,11 @@
 <title>计时器</title>
 <script type="text/javascript">
 	// 2018-01-07T22:53:00
-	let startTime = new Date("2018-01-07T22:53:00")
+	let startTime = new Date()
+	startTime.setFullYear(2018, 0, 7)
+	startTime.setHours(22)
+	startTime.setMinutes(53)
+	startTime.setSeconds(0)
 	let msPerDay = 24*60*60*1000
 	function timeDiff()
 	{
