@@ -4,19 +4,20 @@
 <link rel="shortcut icon" href="icon.jpg" type="image/x-icon">
 <title>计时器</title>
 <script type="text/javascript">
-	let startTime = new Date("2018-01-07 22:53:00")
+	// 2018-01-07T22:53:00
+	let startTime = new Date("2018-01-07T22:53:00")
 	let msPerDay = 24*60*60*1000
 	function timeDiff()
 	{
-		var today=new Date()
-		var time1 = today.getTime() - startTime.getTime()
-		var dayNum = parseInt(time1/24/60/60/1000)
-		var time2 = time1 - dayNum * msPerDay
-		var h = parseInt(time2/60/60/1000)
-		var time3 = time2 - h * 60*60*1000
-		var m = parseInt(time3/60/1000)
-		var time4 = time3 - m * 60*1000
-		var s = parseInt(time4 / 1000)
+		let today=new Date()
+		let time1 = today.getTime() - startTime.getTime()
+		let dayNum = parseInt(time1/24/60/60/1000)
+		let time2 = time1 - dayNum * msPerDay
+		let h = parseInt(time2/60/60/1000)
+		let time3 = time2 - h * 60*60*1000
+		let m = parseInt(time3/60/1000)
+		let time4 = time3 - m * 60*1000
+		let s = parseInt(time4 / 1000)
 		// add a zero in front of numbers<10
 		m=checkTime(m)
 		s=checkTime(s)
