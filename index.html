@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <link rel="icon" href="icon.jpg" type="image/x-icon">
 <link rel="shortcut icon" href="icon.jpg" type="image/x-icon">
@@ -8,7 +9,7 @@
 	function timeDiff()
 	{
 		var today=new Date()
-		var time1 = today - startTime
+		var time1 = today.getTime() - startTime.getTime()
 		var dayNum = parseInt(time1/24/60/60/1000)
 		var time2 = time1 - dayNum * msPerDay
 		var h = parseInt(time2/60/60/1000)
