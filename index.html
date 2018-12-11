@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<link rel="icon" href="icon.jpg" type="image/x-icon">
+<link rel="shortcut icon" href="icon.jpg" type="image/x-icon">
+<title>计时器</title>
+<script type="text/javascript">
+	let startTime = new Date("2018-01-07 22:53:00")
+	let msPerDay = 24*60*60*1000
+	function timeDiff()
+	{
+		var today=new Date()
+		var time1 = today - startTime
+		var dayNum = parseInt(time1/24/60/60/1000)
+		var time2 = time1 - dayNum * msPerDay
+		var h = parseInt(time2/60/60/1000)
+		var time3 = time2 - h * 60*60*1000
+		var m = parseInt(time3/60/1000)
+		var time4 = time3 - m * 60*1000
+		var s = parseInt(time4 / 1000)
+		// add a zero in front of numbers<10
+		m=checkTime(m)
+		s=checkTime(s)
+		document.getElementById('txt').innerHTML="  我们相识的第 " + dayNum + " 天 " + h + " 时 "+ m + " 分 " + s + "秒"
+		t=setTimeout('timeDiff()',500)
+	}
+	function checkTime(i)
+	{
+		if (i<10) 
+		    {i="0" + i}
+		return i
+	}
+</script>
+<body onload="timeDiff()" >
+<h3> 现在是：</h3>
+<div id="txt"></div>
+</body>
+</html>
